@@ -1,0 +1,28 @@
+FUNCTION ProduitScalaire(a,b : ARRAY_OF INTEGER[];) : INTEGER
+VAR
+   i : INTEGER;
+   sum : INTEGER := 0
+BEGIN
+    FOR i FROM 1 TO a.length STEP 1  DO
+        sum= sum+a[i]*b[i]
+    END_FOR
+    RETURN sum
+END
+ALGORITHM CalcOrth
+VAR
+    T1 : ARRAY_OF type[3] := [2,4,5];
+    T2 : ARRAY_OF type[3] := [2,4,5];
+    bousbi3 : INTEGER := 0;
+BEGIN
+    IF (T1.length <> T2.length) THEN
+        Write("Error");
+    ELSE
+        bousbi3 := ProduitScalaire(T1,T2);
+        IF (bousbi3 = 0) THEN
+            write("Orth")
+        ELSE
+            write("Non Orth")
+        END_IF
+    END_IF
+    
+END
